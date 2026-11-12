@@ -357,6 +357,14 @@
     },
     {
      "@type": "Question",
+     "name": "How do you protect my home while you work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Floors and furniture are protected with dust sheets and covers, surfaces are carefully masked, and we tidy up at the end of every day. When the job is finished we remove all materials and leave your home clean."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "Are you insured?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -569,6 +577,28 @@
   input:focus,select:focus,textarea:focus{outline:2px solid var(--blue-mid);border-color:transparent}
   textarea{min-height:120px;resize:vertical}
   .form-note{font-size:.8rem;color:var(--muted);margin-top:.8rem}
+  .photo-field{margin-bottom:1rem}
+  .photo-field .hint{font-size:.8rem;color:var(--muted);margin:-.15rem 0 .55rem}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .photo-drop{display:flex;align-items:center;justify-content:center;gap:.6rem;border:2px dashed var(--line);border-radius:8px;padding:1rem;background:#fbfdff;color:var(--blue);font-weight:700;font-size:.95rem;cursor:pointer;transition:border-color .2s,background .2s;text-align:center}
+  .photo-drop:hover,.photo-drop.drag{border-color:var(--blue-mid);background:var(--mist)}
+  #fPhotos:focus-visible + .photo-drop{outline:2px solid var(--blue-mid);outline-offset:2px}
+  .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:.5rem;margin-top:.7rem}
+  .thumbs:empty{display:none}
+  .thumb{position:relative;aspect-ratio:1;border-radius:6px;overflow:hidden;background:var(--sky)}
+  .thumb img{width:100%;height:100%;object-fit:cover}
+  .thumb button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(20,40,75,.8);color:#fff;font-size:15px;line-height:24px;padding:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+  .photo-count{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+  .form-ok.info{background:var(--mist);color:var(--navy)}
+  .form-ok a{font-weight:700}
+
+  /* Promise */
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .promise-item{display:flex;gap:1rem;align-items:flex-start;padding:1.6rem;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,var(--mist) 100%)}
+  .promise-item .pi{flex:none;width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center}
+  .promise-item h3{font-size:1rem;letter-spacing:.06em;margin-bottom:.35rem}
+  .promise-item p{color:var(--muted);font-size:.94rem}
+
   .form-ok{display:none;background:#e8f4ea;color:#1d6b33;padding:.8rem 1rem;border-radius:8px;margin-top:1rem;font-size:.9rem}
 
   /* Footer */
@@ -614,6 +644,7 @@
     .hero-grid,.about-grid,.areas-grid,.contact-grid,.rate-grid{grid-template-columns:1fr}
     .hero-photo .badge{left:12px;bottom:-22px}
     .rev{flex-basis:calc((100% - 1.4rem)/2)}
+    .promise-grid{grid-template-columns:1fr 1fr}
     .f-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:760px){
@@ -625,7 +656,7 @@
     .menu a{color:var(--navy)!important;font-size:1.05rem}
     .menu .call{background:var(--blue)!important;color:var(--white)!important}
     .rev{flex-basis:88%}
-    .ticks,.row{grid-template-columns:1fr}
+    .ticks,.row,.promise-grid{grid-template-columns:1fr}
     .f-grid{grid-template-columns:1fr}
     .fab{display:grid}
     .wa-fab{bottom:calc(90px + env(safe-area-inset-bottom));padding:.7rem 1rem;font-size:.9rem}
@@ -646,6 +677,7 @@
     <ul class="menu" id="menu">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#promise">Our Promise</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#gallery">Our Work</a></li>
       <li><a href="#areas">Areas</a></li>
@@ -743,6 +775,25 @@
     </div>
     <div class="extras reveal">
       <span class="pill">Coving</span><span class="pill">Tiling</span><span class="pill">Vinyl</span><span class="pill">Door Stripping</span><span class="pill">Wall Murals</span><span class="pill">Carpentry</span><span class="pill">Brickwork</span><span class="pill">Insurance Work</span><span class="pill">Commercial Redecoration</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMISE ============ -->
+<section class="section" id="promise">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">How We Protect Your Home</span>
+      <h2>The Sinclair Promise</h2>
+      <p class="lead">Having decorators in your home should be a pleasure, not a disruption. On every job, large or small, you can count on us to:</p>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-item reveal"><div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/></svg></div><div><h3>FLOORS &amp; FURNITURE PROTECTED</h3><p>Dust sheets down and furniture moved or covered before any work starts, with careful masking around floors, fittings and edges.</p></div></div>
+      <div class="promise-item reveal"><div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div><div><h3>PROPER PREPARATION</h3><p>Cracks filled, surfaces sanded and repairs made good first &mdash; the preparation is what makes a finish look great and last.</p></div></div>
+      <div class="promise-item reveal"><div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l7-7M14 3l7 7-6 6-7-7z"/><path d="M8 13l3 3"/></svg></div><div><h3>TIDY EVERY DAY</h3><p>Your home stays liveable while we work. We clear up at the end of every day, so there&rsquo;s no mess left overnight.</p></div></div>
+      <div class="promise-item reveal"><div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>ON TIME, AS AGREED</h3><p>We turn up when we say we will, keep you updated as the job progresses and work hard to finish on schedule.</p></div></div>
+      <div class="promise-item reveal"><div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><div><h3>CLEAR, FREE QUOTES</h3><p>A free, no-obligation quote that sets out what&rsquo;s included, so you know exactly what you&rsquo;re getting before we start.</p></div></div>
+      <div class="promise-item reveal"><div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.3L18 9l-4.1 1.7L12 15l-1.9-4.3L6 9l4.1-1.7z"/><path d="M19 15l.8 1.7L21.5 17.5l-1.7.8L19 20l-.8-1.7-1.7-.8 1.7-.8z"/></svg></div><div><h3>LEFT SPOTLESS</h3><p>When the job&rsquo;s done we remove all materials, give everything a final clean and walk round with you to make sure you&rsquo;re happy.</p></div></div>
     </div>
   </div>
 </section>
@@ -880,6 +931,7 @@
       <details><summary>Do you paint house exteriors?</summary><p>Yes. We paint render, masonry, wooden windows, doors, porches and guttering, with jet washing and thorough preparation before painting.</p></details>
       <details><summary>Do you offer spray painting?</summary><p>Yes. We use professional spray equipment for a smoother finish on walls, doors, kitchens and joinery.</p></details>
       <details><summary>Do you take on commercial work?</summary><p>Yes. We work for both domestic and commercial customers, including office refurbishments and commercial redecoration.</p></details>
+      <details><summary>How do you protect my home while you work?</summary><p>Floors and furniture are protected with dust sheets and covers, surfaces are carefully masked, and we tidy up at the end of every day. When the job is finished we remove all materials and leave your home clean.</p></details>
       <details><summary>Are you insured?</summary><p>Yes. We carry full public liability insurance, and we are vetted members of Checkatrade and TrustATrader with references available on request.</p></details>
     </div>
   </div>
@@ -920,9 +972,19 @@
       </select>
       <label for="fMsg">Project details</label>
       <textarea id="fMsg" name="message" placeholder="Tell us about the rooms or areas, and when you'd like the work done…"></textarea>
+      <div class="photo-field">
+        <label for="fPhotos">Photos of the job <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <p class="hint">Photos help Charlie give you a more accurate quote. Add up to 10.</p>
+        <input id="fPhotos" class="sr-only" type="file" name="photos" accept="image/*" multiple>
+        <label for="fPhotos" class="photo-drop" id="photoDrop">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Add photos</span>
+        </label>
+        <div class="thumbs" id="thumbs" aria-live="polite"></div>
+      </div>
       <button type="submit" class="btn btn-blue" style="width:100%;justify-content:center">Send Enquiry</button>
-      <p class="form-note">Submitting opens your email app with your details pre-filled, ready to send to Charlie. Prefer WhatsApp? <a href="https://wa.me/447540487044?text=Hi%20Charlie%2C%20I%20found%20you%20on%20your%20website%20and%20would%20like%20a%20free%20quote.%20Here%20are%20some%20details/photos%20of%20the%20job%3A" target="_blank" rel="noopener">Message us with photos</a>.</p>
-      <div class="form-ok" id="formOk">Thanks! Your email app should now open &mdash; just press send.</div>
+      <p class="form-note">Use this form to email Charlie your details and photos of the job. Sending opens your email or sharing app with everything filled in &mdash; just press send. Prefer WhatsApp? <a href="https://wa.me/447540487044?text=Hi%20Charlie%2C%20I%20found%20you%20on%20your%20website%20and%20would%20like%20a%20free%20quote.%20Here%20are%20some%20details/photos%20of%20the%20job%3A" target="_blank" rel="noopener">Message us with photos</a>.</p>
+      <div class="form-ok" id="formOk" role="status"></div>
     </form>
   </div>
 </section>
@@ -1038,19 +1100,70 @@
   lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
 
-  // Quote form -> mailto
+  // Quote form: photos + email
+  var EMAIL='charlessinclair2012@googlemail.com',MAXP=10,photos=[];
+  var pInput=document.getElementById('fPhotos'),thumbs=document.getElementById('thumbs'),drop=document.getElementById('photoDrop');
+  function renderThumbs(){
+    thumbs.innerHTML='';
+    photos.forEach(function(file,i){
+      var d=document.createElement('div');d.className='thumb';
+      var im=document.createElement('img');im.alt='Photo '+(i+1);im.src=URL.createObjectURL(file);im.onload=function(){URL.revokeObjectURL(im.src);};
+      var x=document.createElement('button');x.type='button';x.setAttribute('aria-label','Remove photo '+(i+1));x.innerHTML='&times;';
+      x.addEventListener('click',function(){photos.splice(i,1);renderThumbs();});
+      d.appendChild(im);d.appendChild(x);thumbs.appendChild(d);
+    });
+    drop.querySelector('span').textContent=photos.length?('Add more photos ('+photos.length+'/'+MAXP+')'):'Add photos';
+  }
+  function addFiles(list){
+    var skipped=0;
+    Array.prototype.forEach.call(list,function(f){
+      if(!/^image\//.test(f.type)&&!/\.(jpe?g|png|heic|heif|webp|gif)$/i.test(f.name))return;
+      if(photos.length>=MAXP){skipped++;return;}
+      photos.push(f);
+    });
+    renderThumbs();
+    if(skipped)alertBox('Up to '+MAXP+' photos can be added — '+skipped+' not included.',true);
+  }
+  pInput.addEventListener('change',function(){addFiles(pInput.files);pInput.value='';});
+  ['dragenter','dragover'].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add('drag');});});
+  ['dragleave','drop'].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove('drag');});});
+  drop.addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files)addFiles(e.dataTransfer.files);});
+
+  function canSharePhotos(){
+    try{return !!(navigator.canShare&&navigator.share&&navigator.canShare({files:photos}));}catch(err){return false;}
+  }
   document.getElementById('quoteForm').addEventListener('submit',function(e){
     e.preventDefault();
     var f=this.elements;
     if(!f.name.value.trim()||!f.phone.value.trim()){
       (f.name.value.trim()?f.phone:f.name).focus();
-      alertBox('Please add your name and phone number.');return;
+      alertBox('Please add your name and phone number.',true);return;
     }
+    var subject='Quote request – '+f.type.value;
     var body='Name: '+f.name.value+'\nPhone: '+f.phone.value+'\nEmail: '+f.email.value+'\nPostcode: '+f.postcode.value+'\nType of work: '+f.type.value+'\n\nDetails:\n'+f.message.value;
-    window.location.href='mailto:charlessinclair2012@googlemail.com?subject='+encodeURIComponent('Quote request – '+f.type.value)+'&body='+encodeURIComponent(body);
+    var mailto='mailto:'+EMAIL+'?subject='+encodeURIComponent(subject)+'&body=';
+    if(photos.length&&canSharePhotos()){
+      // Phones & some computers: share the photos and details straight into Mail (or WhatsApp)
+      try{if(navigator.clipboard)navigator.clipboard.writeText(EMAIL).catch(function(){});}catch(err){}
+      navigator.share({title:subject,text:'To: '+EMAIL+'\n\n'+subject+'\n\n'+body,files:photos.slice()}).then(function(){
+        alertBox('Thanks! If your email app is still open, just press send to get your photos to Charlie.');
+      }).catch(function(err){
+        if(err&&err.name==='AbortError'){alertBox('No problem — tap Send Enquiry again when you’re ready.',true);}
+        else{window.location.href=mailto+encodeURIComponent(body+'\n\n['+photos.length+' photo(s) to attach]');
+             alertBox('Your email is ready — please attach your '+photos.length+' photo'+(photos.length>1?'s':'')+' before pressing send.',true);}
+      });
+      alertBox('Choose Mail (or Gmail/Outlook) to email your photos. If the "To" box is empty, paste Charlie’s address — we’ve copied it for you: '+EMAIL,true);
+      return;
+    }
+    if(photos.length){
+      window.location.href=mailto+encodeURIComponent(body+'\n\n['+photos.length+' photo(s) attached]');
+      alertBox('Your email is ready — please attach your '+photos.length+' photo'+(photos.length>1?'s':'')+' to it before pressing send (this device can’t add them automatically).',true);
+      return;
+    }
+    window.location.href=mailto+encodeURIComponent(body);
     alertBox('Thanks! Your email app should now open — just press send.');
   });
-  function alertBox(msg){var ok=document.getElementById('formOk');ok.textContent=msg;ok.style.display='block';}
+  function alertBox(msg,info){var ok=document.getElementById('formOk');ok.textContent=msg;ok.classList.toggle('info',!!info);ok.style.display='block';}
 
   document.getElementById('yr').textContent=new Date().getFullYear();
 })();
